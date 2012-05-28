@@ -1,0 +1,9 @@
+[submodule "vendor/mesos"]
+	path = vendor/mesos
+	url = https://github.com/apache/mesos.git
+[submodule "vendor/spark"]
+	path = vendor/spark
+	url = https://github.com/mesos/spark.git
+[submodule "vendor/shark"]
+	path = vendor/shark
+	url = https://github.com/amplab/shark.git
