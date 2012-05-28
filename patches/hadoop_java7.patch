@@ -1,0 +1,23 @@
+--- vendor/mesos/hadoop/hadoop-0.20.205.0.patch
++++ vendor/mesos/hadoop/hadoop-0.20.205.0.patch
+@@ -250,3 +250,20 @@
+    static TaskTrackerInstrumentation create(TaskTracker tt) {
+      return create(tt, DefaultMetricsSystem.INSTANCE);
+    }
++diff --git a/src/contrib/gridmix/src/java/org/apache/hadoop/mapred/gridmix/Gridmix.java b/src/contrib/gridmix/src/java/org/apache/hadoop/mapred/gridmix/Gridmix.java
++index eea90cf..4bdc001 100644
++--- a/src/contrib/gridmix/src/java/org/apache/hadoop/mapred/gridmix/Gridmix.java
+++++ b/src/contrib/gridmix/src/java/org/apache/hadoop/mapred/gridmix/Gridmix.java
++@@ -697,10 +697,10 @@ public class Gridmix extends Configured implements Tool {
++     }
++   }
++ 
++-  private <T> String getEnumValues(Enum<? extends T>[] e) {
+++  private String getEnumValues(Enum<?>[] e) {
++     StringBuilder sb = new StringBuilder();
++     String sep = "";
++-    for (Enum<? extends T> v : e) {
+++    for (Enum<?> v : e) {
++       sb.append(sep);
++       sb.append(v.name());
++       sep = "|";
