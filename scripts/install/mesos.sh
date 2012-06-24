@@ -1,5 +1,5 @@
 #!/bin/bash
 
 install_mesos(){
-  cp
+  conf_local_mesos
 }
