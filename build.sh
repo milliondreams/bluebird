@@ -3,7 +3,10 @@
 
 setenv 
 
-makedirs
+if [ $1 != "clean" ];
+then
+  makedirs
+fi
 
 build_clean(){
   echo Cleaning . . .

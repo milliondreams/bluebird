@@ -1,0 +1,28 @@
+#!/bin/bash
+
+cat <<END
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>`hostname -f`:54311</value>
+  </property>
+  <property>
+    <name>mapred.jobtracker.taskScheduler</name>
+    <value>org.apache.hadoop.mapred.MesosScheduler</value>
+  </property>
+  <property>
+    <name>mapred.mesos.master</name>
+    <value>`hostname -f`:5050</value>
+  </property>
+  <property>
+    <name>mapred.system.dir</name>
+    <value>/hadoop/mapred/system</value>
+  </property>
+</configuration>
+
+END

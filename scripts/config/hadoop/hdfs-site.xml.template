@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cat <<END
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+  <property>
+    <name>dfs.name.dir</name>
+    <value>$BLUEBIRD_DATA/name</value>
+  </property>
+  <property>
+    <name>dfs.data.dir</name>
+    <value>$BLUEBIRD_DATA/data</value>
+  </property>
+</configuration>
+
+END
