@@ -8,13 +8,12 @@ run_hadoop(){
 
   echo Starting namenode . . .
   $HADOOP_HOME/bin/hadoop-daemon.sh --config $HADOOP_HOME/conf start namenode
-  echo Waiting for 5s for namenode to be ready . . .
-  sleep 5s
 
   echo Starting datanode . . .
   $HADOOP_HOME/bin/hadoop-daemon.sh --config $HADOOP_HOME/conf start datanode
-  echo Waiting 5s for datanode to start . . .
-  sleep 5s
+  
+  echo Wait for namenode to be ready . . .
+  $HADOOP_HOME/bin/hadoop dfsadmin -safemode wait
 
   echo Starting jobtracker . . .
   $HADOOP_HOME/bin/hadoop-daemon.sh --config $HADOOP_HOME/conf start jobtracker
