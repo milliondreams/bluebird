@@ -5,6 +5,13 @@ then
   export  BLUEBIRD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 fi
 
+if [ -z $SCALA_HOME ];
+then
+  export  SCALA_HOME=$BLUEBIRD/scala
+  export PATH=$PATH:$SCALA_HOME/bin
+fi
+
+
 for run_script in ./scripts/run/*.sh;
 do
  . $run_script
