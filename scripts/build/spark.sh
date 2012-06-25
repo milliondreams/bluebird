@@ -11,4 +11,7 @@ build_spark(){
 dist_spark(){
   cp -r $BLUEBUILD/vendor/spark $BLUEBUILD/dist/spark
   rm -Rf $BLUEBUILD/dist/spark/.git
+
+  echo Publish spark in preparaation of a Shark build . . .
+  ./sbt/sbt publish-local
 }

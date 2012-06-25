@@ -6,6 +6,7 @@ build_all(){
   sh $BLUEBUILD/build.sh hive
   sh $BLUEBUILD/build.sh scala
   sh $BLUEBUILD/build.sh spark
+  sh $BLUEBUILD/build.sh spark
 
   cp -r $BLUEBUILD/scripts/config/ $BLUEBUILD/dist/scripts/
   cp -r $BLUEBUILD/scripts/install/ $BLUEBUILD/dist/scripts/

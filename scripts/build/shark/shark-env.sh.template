@@ -1,0 +1,7 @@
+#!/bin/bash
+cat <<END
+#!/usr/bin/env bash
+
+export HIVE_HOME=$BLUEBUILD/dist/hive
+
+END
