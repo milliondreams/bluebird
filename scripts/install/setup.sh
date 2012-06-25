@@ -28,6 +28,8 @@ setup_filesystem(){
 }
 
 copy_all(){
+  echo Copy target is $1
+  echo I also got $2
   setup_filesystem $1
   for folder in $BLUEDIST/*;
   do

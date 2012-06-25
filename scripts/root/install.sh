@@ -18,11 +18,12 @@ done
 
 
 installthis(){
-  if [ -z $1 ]
+  echo Installing in $2
+  if [ -z $2 ]
   then
-    copy_all $1
-  else
     copy_all
+  else
+    copy_all $2
   fi
 
   if [ -f ./scripts/install/$1.sh ];
@@ -36,10 +37,15 @@ installthis(){
   fi
 }
 
-if [ $# -gt 0 ];
+if [ $# -eq 1 ];
 then
+  echo Will install to ~/bluebird
   installthis $1
-else
+elif [ $# -eq 2 ];
+then
+  echo Will install to $2
+  installthis $1 $2
+else 
   echo what to install?
 fi
 
