@@ -28,10 +28,6 @@ dist_mesos(){
   
   cd $BLUEBUILD
 
-  cp -r $BLUEBUILD/scripts/config/mesos.sh $BLUEBUILD/dist/scripts/config/mesos.sh
-  cp -r $BLUEBUILD/scripts/install/mesos.sh $BLUEBUILD/dist/scripts/install/mesos.sh
-  cp -r $BLUEBUILD/scripts/run/mesos.sh $BLUEBUILD/dist/scripts/run/mesos.sh
-  cp -r $BLUEBUILD/scripts/stop/mesos.sh $BLUEBUILD/dist/scripts/stop/mesos.sh
 }
 
 clean_mesos(){
