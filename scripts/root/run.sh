@@ -19,15 +19,17 @@ done
 
 
 runthis(){
-  if [ `type -t run_$1`"x" == "functionx" ];
+  toRun="$1"
+  shift
+  if [ `type -t run_$toRun`"x" == "functionx" ];
   then
-    run_$1
+    run_$toRun $@
   fi
 }
 
 if [ $# -gt 0 ];
 then
-  runthis $1
+  runthis $@
 else
   echo what to run?
 fi
