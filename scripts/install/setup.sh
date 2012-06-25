@@ -28,8 +28,18 @@ setup_filesystem(){
 }
 
 copy_all(){
-  setup_filesystem
-  cp -r $BLUEDIST/* $BLUEBIRD
+  setup_filesystem $1
+  for folder in $BLUEDIST/*;
+  do
+    localname=`basename $folder`
+    echo Checking $localname . . .
+    if [ ! -e $BLUEBIRD/$localname ];
+    then
+      echo Copying to $BLUEBIRD/$localname . . .
+      cp -r $folder $BLUEBIRD
+    fi
+  done;
+  
   echo Files copied!
 }
 
