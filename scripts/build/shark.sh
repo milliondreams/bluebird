@@ -11,7 +11,7 @@ build_shark(){
   export HIVE_HOME=$BLUEBUILD/dist/hive
   
   cd $SHARK_HOME
-  git checkout -b spark0.5 origin/spark0.5
+  git checkout spark0.5
   git pull origin spark0.5
   
   sed -i 's/0.4-SNAPSHOT/0.5.0/g' $SHARK_HOME/project/SharkBuild.scala

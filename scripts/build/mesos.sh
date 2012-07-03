@@ -6,6 +6,9 @@ build_mesos(){
   #Goto Mesos Directory
   cd $BLUEBUILD/vendor/mesos
 
+  #checkout mesos 0.9.0
+  git checkout -b release-0.9.0-incubating-RC5
+
   #Bootstrap mesos build
   ./bootstrap
 

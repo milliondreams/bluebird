@@ -13,5 +13,7 @@ dist_spark(){
   rm -Rf $BLUEBUILD/dist/spark/.git
 
   echo Publish spark in preparaation of a Shark build . . .
+  cd $BLUEBUILD/vendor/spark
   ./sbt/sbt publish-local
+  cd $BLUEBIRD
 }
