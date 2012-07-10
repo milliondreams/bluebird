@@ -38,6 +38,7 @@ buildthis(){
   if [ $1 != "clean" ];
   then
     cp $BLUEBUILD/scripts/root/*.sh $BLUEBUILD/dist/
+    mkdir -p $BLUEBUILD/dist/scripts/install/
     cp $BLUEBUILD/scripts/install/setup.sh $BLUEBUILD/dist/scripts/install/setup.sh
   fi
 }
